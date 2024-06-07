@@ -1,8 +1,9 @@
 module.exports = {
-  content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue'],
+  content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue', "nuxt.config.js"],
   theme: {
     fontFamily: {
-      sans: 'Roboto, sans-serif',
+      sans: 'Quicksand, sans-serif',
+      serif: 'Vidaloka, serif',
     },
   },
 }

@@ -1,133 +1,66 @@
 <template>
   <div
       v-editable="blok"
-      class="w-full bg-[#120A03] text-center parent"
+      class="w-full bg-[#080502] text-center parent mb-8"
   >
-    <img :src="blok.background_image.filename" alt="Portrait" class="cover div1 w-full max-h-[400px] opacity-30 z-0 "/>
+    <img :src="blok.background_image.filename" alt="Background Image" class="backgroundImg bg-contain  w-full min-h-[300px] md:max-h-[400px] opacity-30 z-0 "/>
 
-    <img :src="blok.portrait_image.filename" alt="Portrait " class="div2 max-h-[400px] z-10 scale-up-ver-top"/>
+    <img :src="blok.portrait_image.filename" alt="Portrait " class="claudiasPortrait justify-self-center max-h-[400px] z-10 scale-up-ver-top"/>
 
 
-    <div  class="text-4xl text-[#FBF7F3] mb-4 div3 z-20 font-bold text-focus-in">
+    <h1  class="welcomeTitle text-4xl text-[#FBF7F3] mt-12  justify-self-center align-self-center z-20 font-bold uppercase text-focus-in -mb-5 tracking-wide">
       {{blok.title}}
-    </div>
-    <div  class="text-xl text-[#FBF7F3] mb-4 div4 z-20">
-      {{blok.hero_text}}
-    </div>
+    </h1>
+
+    <div v-html="textdesc" class="welcomeDesc text-[#FBF7F3] text-base align-self-end text-justify z-20 mt-4 md:-mt-5 md:px-14 mb-6  md:px-16"></div>
 
 
   </div>
 </template>
 
 <script setup>
-defineProps(
-    { blok: Object } //sagt nuxt, dass storyblok objekt mitgegeben wird
-);
+import { defineProps, computed } from 'vue';
+import { renderRichText } from '@storyblok/vue';
+
+const props = defineProps({
+  blok: {
+    type: Object,
+    required: true
+  }
+});
+
+const textdesc = computed(() => {
+    return renderRichText(props.blok.hero_text);
+});
 </script>
 
 <style scoped>
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
 }
 
-.div1 {
+.backgroundImg {
   grid-area: 1 / 1 / 4 / 6;
 }
-.div2 {
+.claudiasPortrait {
   grid-area: 2 / 2 / 5 / 5;
-  justify-self: center;
   box-shadow: 5px 6px 8px 2px rgba(0,0,0,0.25);
 }
-.div3 {
+.welcomeTitle {
   grid-area: 1 / 2 / 2 / 5;
-  justify-self: center;
-  align-self: center;
-
-
- /* font-family: "Petit Formal Script", cursive;
-  font-weight: 400;
-  font-style: normal;*/
 
   font-family: "Vidaloka", serif;
   font-weight: 400;
   font-style: normal;
+/*  margin-bottom: -18px;*/
+  text-shadow: 2px 2px 4px rgba(63, 36, 36, 0.48);
 }
-.div4 {
+.welcomeDesc {
   grid-area: 5 / 2 / 6 / 5;
-  align-self: end;
 }
-/*
-@media(max-width: 770px) {
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-  .div1 { grid-area: 1 / 1 / 5 / 6; }
-  .div2 {
-    grid-area: 1 / 2 / 4 / 5;
-    align-self: end;
-    margin-bottom: 20px;
-  }
-  .div3 { grid-area: 1 / 2 / 2 / 5; }
-  .div4 { grid-area: 4 / 2 / 5 / 5; }
-
-}
-
-@media(max-width: 660px) {
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-  .div1 { grid-area: 1 / 1 / 5 / 6; }
-  .div2 {
-    grid-area: 1 / 2 / 4 / 4;
-    align-self: center;
-  }
-  .div3 { grid-area: 1 / 2 / 2 / 4; }
-  .div4 {
-    margin-top: 50px;
-    align-self: end;
-    grid-area: 3 / 2 / 4 / 4;
-  }
-
-}
-
-@media(max-width: 600px) {
-  .parent {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
-  .div1 { grid-area: 1 / 1 / 4 / 2; }
-  .div2 { grid-area: 1 / 1 / 4 / 2; }
-  .div3 {
-    grid-area: 1 / 1 / 2 / 2;
-    align-self: start;
-  }
-  .div4 {
-    grid-area: 3 / 1 / 4 / 2;
-    align-self: start;
-    margin: 10px;
-  }
-
-
-}*/
 
 
   .scale-up-ver-top {
@@ -141,11 +74,6 @@ defineProps(
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
-/**
- * ----------------------------------------
- * animation scale-up-ver-top
- * ----------------------------------------
- */
 @keyframes scale-up-ver-top {
   0% {
     transform: scaleY(0.4);
@@ -156,9 +84,6 @@ defineProps(
     transform-origin: 100% 0%;
   }
 }
-
-
-
 .text-focus-in {
   animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
@@ -170,12 +95,6 @@ defineProps(
  * See http://animista.net/license for more info.
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation text-focus-in
- * ----------------------------------------
- */
 @keyframes text-focus-in {
   0% {
     filter: blur(12px);
@@ -188,16 +107,8 @@ defineProps(
 }
 
 
-
-
-
 </style>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
 
-h2 {
-  font-family: 'Abril Fatface', sans-serif;
-}
 </style>

@@ -1,21 +1,25 @@
 <template>
   <div
       v-editable="blok"
-      className="w-full p-4 pl-20 pr-20 bg-[#AF8C75] text-left items-center justify-center parent "
+      className="w-full bg-[#AF8C75] text-left"
       id="home"
   >
 
-<!--    >-->
-    <div class="flex div1">
-      <a class="pr-10" href="#projects">Projects</a>
-      <a class="pr-10" href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <img :src="blok.logo_image.filename" alt="logo" class="w-12 mx-auto div2"/>
+    <img :src="blok.logo_image.filename" alt="logo" class=" py-5 w-20 mx-auto"/>
 
-    <div v-if="blok.social_media.length" class="div3">
-      <img v-for="link in blok.social_media" :key="link.id" :src="link.filename" class="inline-block pr-1 text-white w-[30px]">
+    <div class="flex justify-around bg-[#080502] text-[#FBF7F3] py-1">
+      <div class="flex">
+        <a class="pr-10 hover:uppercase" href="#projects">Projects</a>
+        <a class="pr-10 hover:uppercase" href="#techstack">Tech Stack</a>
+        <a class="hover:uppercase"href="#contact">Contact</a>
+      </div>
+
+
+<!--      <div v-if="blok.social_media.length" class="div3">
+        <img v-for="link in blok.social_media" :key="link.id" :src="link.filename" class="inline-block pr-1 text-white w-[30px]">
+      </div>-->
     </div>
+
 
   </div>
 </template>
@@ -25,20 +29,7 @@ defineProps({ blok: Object });
 </script>
 
 <style scoped>
-.parent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
 
-.div1 { grid-area: 1 / 1 / 2 / 2; }
-.div2 { grid-area: 1 / 2 / 2 / 3; }
-.div3 {
-  grid-area: 1 / 3 / 2 / 4;
-  justify-self: end
-}
 
 
 </style>
