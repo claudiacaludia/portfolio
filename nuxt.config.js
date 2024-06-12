@@ -6,14 +6,19 @@ export default defineNuxtConfig({
         {rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true},
         {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Vidaloka&display=swap'},
         {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap'},
-        {rel: 'stylesheet', type:"text/css", href:'~/assets/css/main.css' },
       ],
       bodyAttrs: {
         class: 'font-sans'
       },
     },
   },
-  css: ['@/assets/css/roboto.css'],
+  css: [
+    '@/assets/css/roboto.css',
+    'aos/dist/aos.css'
+  ],
+  plugins: [
+    '@/plugins/aos.js'
+  ],
   modules: [
     [
       '@storyblok/nuxt',

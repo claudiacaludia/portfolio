@@ -13,9 +13,6 @@
       <div class="m-0 md:m-1">
         <StoryblokComponent :blok="blok.project_cards[1]" />
       </div>
-<!--      <div class="m-1">
-        <StoryblokComponent :blok="blok.project_cards[2]" />
-      </div>-->
     </div>
 
   </div>
@@ -33,19 +30,17 @@ const props = defineProps({
 });
 
 const description = computed(() => {
-  try {
     return renderRichText(props.blok.description);
-  } catch (error) {
-    console.error("Error rendering rich text:", error);
-    return "Failed to load content.";
-  }
+
 });
 </script>
 
 <style>
 h1, h2{
   font-family: Vidaloka;
-  text-shadow: 2px 2px 4px rgba(63, 36, 36, 0.48);
+}
+body{
+  scroll-behavior: smooth;
 }
 
 </style>

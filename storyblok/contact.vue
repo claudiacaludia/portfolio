@@ -1,10 +1,12 @@
 <template>
   <div
       v-editable="blok"
-      class="w-full bg-[#474A4C] px-8 md:px-16 py-12 flex flex-col items-center text-center mt-4"
+      class="w-full bg-[#474A4C] px-8 md:px-16 py-12 mt-4 flex flex-col items-center text-center"
       id="contact"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
   >
-    <h2 class="text-4xl text-[#FBF7F3]">
+    <h2 class="text-4xl text-[#FBF7F3] mt-8">
       {{ blok.title }}
     </h2>
     <div class="text-[#FBF7F3] text-base z-20 ">
@@ -13,7 +15,7 @@
     <a
         v-if="blok.mail.email"
         :href="'mailto:' + blok.mail.email"
-        class="text-[#FBF7F3] mt-4 bg-[#AF8C75] hover:bg-[#8E98A2] w-[200px] rounded-md uppercase "
+        class="text-[#FBF7F3] mt-4 bg-[#AF8C75] hover:bg-[#8E98A2] w-[200px] rounded-md uppercase font-semibold mb-12 "
     >Contact me</a>
   </div>
 </template>

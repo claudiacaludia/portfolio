@@ -1,4 +1,5 @@
 # portfolio
 portfolio
 
-Vercel: portfolio-claudiapemmer.vercel.app
+Vercellink: www.claudiapemmer.at
+Github: https://github.com/claudiacaludia/portfolio
