@@ -1,11 +1,11 @@
 <template>
   <div v-editable="blok"
-       class="py-1 text-center bg-[#474A4C] pb-2 "
+       class="py-1 text-center bg-[#D2CECA] pb-2 "
        id="projects"
   >
 
-    <h2 class="text-4xl text-[#FBF7F3] mt-12 justify-self-center align-self-center z-20 font-bold uppercase">Projects</h2>
-    <div v-html="description" class="text-[#FBF7F3]"></div>
+    <h2 class="text-4xl text-[#080502] mt-12 justify-self-center align-self-center z-20 font-bold uppercase">Projects</h2>
+    <div v-html="description" class="text-[#080502]"></div>
     <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center">
       <div class="m-0 md:m-1">
         <StoryblokComponent :blok="blok.project_cards[0]" />

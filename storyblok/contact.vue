@@ -1,15 +1,15 @@
 <template>
   <div
       v-editable="blok"
-      class="w-full bg-[#474A4C] px-8 md:px-16 py-12 mt-4 flex flex-col items-center text-center"
+      class="w-full bg-[#D2CECA] px-8 md:px-16 py-12 mt-4 flex flex-col items-center text-center"
       id="contact"
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
   >
-    <h2 class="text-4xl text-[#FBF7F3] mt-8">
+    <h2 class="text-4xl text-[#080502] mt-8">
       {{ blok.title }}
     </h2>
-    <div class="text-[#FBF7F3] text-base z-20 ">
+    <div class="text-[#080502] text-base z-20 ">
       <div v-html="textdesc"></div>
     </div>
     <a

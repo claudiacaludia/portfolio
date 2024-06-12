@@ -2,11 +2,11 @@
   <div v-editable="blok" class="my-12 flex flex-col justify-center items-center "
        data-aos="fade-up"
        data-aos-anchor-placement="top-bottom">
-    <img :src="blok.project_image.filename" alt="Project Image" class="w-[70vw] md:w-[40vw] md:hover:scale-110 pb-4" />
+    <img :src="blok.project_image.filename" alt="Project Image" class="w-[70vw] md:w-[45vw] md:hover:scale-110 pb-4" />
     <h3 class="text-xl text-[#AF8C75] mt-8 z-20 font-bold uppercase">
       {{ blok.project_title }}
     </h3>
-    <div v-html="projectDescription" class="text-[#FBF7F3] text-sm "></div>
+    <div v-html="projectDescription" class="text-[#080502] text-sm "></div>
   </div>
 </template>
 
