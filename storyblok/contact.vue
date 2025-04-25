@@ -1,21 +1,21 @@
 <template>
   <div
       v-editable="blok"
-      class="w-full bg-[#D2CECA] px-8 md:px-16 py-12 mt-4 flex flex-col items-center text-center"
-      id="contact"
+      class="w-full px-8 ld:py-16 md:px-16 py-12 mt-4 flex flex-col items-center text-center"
       data-aos="fade-up"
       data-aos-anchor-placement="top-bottom"
+      id="contact"
   >
-    <h2 class="text-4xl text-[#080502] mt-8">
+    <h2 class="text-4xl text-[#FBF7F3] mt-8">
       {{ blok.title }}
     </h2>
-    <div class="text-[#080502] text-base z-20 ">
+<!--    <div class="text-[#FBF7F3] text-base z-20 mt-3 ">
       <div v-html="textdesc"></div>
-    </div>
+    </div>-->
     <a
         v-if="blok.mail.email"
         :href="'mailto:' + blok.mail.email"
-        class="text-[#FBF7F3] mt-4 bg-[#AF8C75] hover:bg-[#8E98A2] w-[200px] rounded-md uppercase font-semibold mb-12 "
+        class="primary-btn"
     >Contact me</a>
   </div>
 </template>
@@ -39,5 +39,4 @@ const textdesc = computed(() => {
 </script>
 
 <style scoped>
-
 </style>

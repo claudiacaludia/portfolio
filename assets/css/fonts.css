@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Vidaloka';
+    src: url('/assets/fonts/Vidaloka-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}

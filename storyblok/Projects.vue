@@ -1,21 +1,15 @@
 <template>
   <div v-editable="blok"
-       class="py-1 text-center bg-[#D2CECA] pb-2 "
+       class="text-center text-white"
        id="projects"
   >
 
-    <h2 class="text-4xl text-[#080502] mt-12 justify-self-center align-self-center z-20 font-bold uppercase">Projects</h2>
-    <div v-html="description" class="text-[#080502]"></div>
-    <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center">
-      <div class="m-0 md:m-1">
-        <StoryblokComponent :blok="blok.project_cards[0]" />
-      </div >
-      <div class="m-0 md:m-1">
-        <StoryblokComponent :blok="blok.project_cards[1]" />
+    <div v-html="description" class="text-[#080502] proj"></div>
+      <div class="bg-[#0B3948] project-card" v-for="(card, index) in blok.project_cards" :key="index">
+        <StoryblokComponent :blok="card" :child="index % 2 === 0 ? 'even' : 'odd'" />
       </div>
     </div>
 
-  </div>
 </template>
 
 <script setup>
@@ -36,12 +30,28 @@ const description = computed(() => {
 </script>
 
 <style>
-h1, h2{
-  font-family: Vidaloka;
-}
-body{
-  scroll-behavior: smooth;
-}
+  h1, h2{
+    font-family: Vidaloka;
+  }
+  body{
+    scroll-behavior: smooth;
+  }
+  .project-card:nth-child(2)  {
+    background-color: var(--primary-color-blue);
+  }
+
+  .project-card:nth-child(3)  {
+    background-color:  var(--primary-color-pink);
+  }
+
+  .project-card:nth-child(4)  {
+    background-color: var(--primary-color-purple);
+  }
+
+  .project-card:nth-child(5)  {
+    background-color: var(--primary-color-blue);
+  }
+
 
 </style>
 

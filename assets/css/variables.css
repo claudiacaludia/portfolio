@@ -1,0 +1,29 @@
+
+:root {
+    --primary-color-pink: #693a52;
+    --primary-color-blue: #0b3948;
+    --primary-color-purple: #313a4c;
+    --button-color: #0D5D77;
+
+    .primary-btn {
+        color: black;
+        margin-top: 2rem;
+        background-color: white;
+        width: 200px;
+        border-radius: calc(infinity * 1px);
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-bottom: 3rem;
+        padding: 0.7rem 1rem;
+        transition: 0.25s;
+        text-align: center;
+        @media (min-width: 40rem){
+            &:hover {
+                box-shadow: inset 0 -4.25em 0 0 var(--button-color);
+                color: white;
+            }
+        }
+
+
+    }
+}

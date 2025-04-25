@@ -1,21 +1,25 @@
 <template>
   <div
       v-editable="blok"
-      class="w-full bg-[#080502] px-8 md:px-16 py-12 flex flex-col items-center text-left min-h-[100vh]"
+      class="w-10/12 m-auto bg-[#121212] px-8 md:px-16 py-12 flex flex-col items-center text-left min-h-[100vh] text-white"
   >
-    <h1 class="text-4xl text-[#FBF7F3]">
+    <h1 class="text-4xl text-[#FBF7F3] mb-3">
       {{ blok.title }}
     </h1>
     <div class="text-[#FBF7F3] text-base z-20 pb-6 ">
       <div v-html="textdesc"></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/indygo" title="Indygo"> Indygo </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+      <div> Icons made by <a href="https://www.flaticon.com/authors/indygo" title="Indygo"> Indygo </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+
     </div>
     <a
         :href="blok.back_home.cached_url"
-        class="text-[#FBF7F3] bg-[#AF8C75] hover:bg-[#8E98A2] w-[200px] rounded-md uppercase font-semibold text-center "
+        class="primary-btn"
     >back</a>
   </div>
 </template>
-
+x
 
 
 <script setup>
@@ -39,4 +43,5 @@ h1{
   font-family: Vidaloka;
   text-shadow: 2px 2px 4px rgba(63, 36, 36, 0.48);
 }
+
 </style>
