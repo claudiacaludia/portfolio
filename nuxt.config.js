@@ -1,4 +1,8 @@
+import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   app: {
     head: {
       htmlAttrs: {
@@ -29,7 +33,8 @@ export default defineNuxtConfig({
   css: [
     '@/assets/css/variables.css',
     'aos/dist/aos.css',
-    '@/assets/css/fonts.css'
+    '@/assets/css/fonts.css',
+    '@/assets/css/main.css'
   ],
 
   plugins: [
@@ -44,7 +49,7 @@ export default defineNuxtConfig({
         region: '' // Set 'US" if your space is created in US region (EU default)
       }
     },
-  ], '@nuxtjs/tailwindcss', '@nuxt/image'],
+  ], '@nuxt/image'],
 
   compatibilityDate: '2025-03-17'
 })
