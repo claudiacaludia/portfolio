@@ -49,6 +49,18 @@
     top: 0;
     left: calc(50% - 40vw) ;
   }
+  @media screen and (max-width: 500px){
+    .quote, .secondQuote {
+      height: 270px;
+    }
+    .secondQuote{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+
+    }
+  }
   .quoteDiv:hover {
     background-color: var(--primary-color-purple);
     transition: background-color 0.7s ease;

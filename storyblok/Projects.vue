@@ -52,6 +52,11 @@ const description = computed(() => {
     background-color: var(--primary-color-blue);
   }
 
+  .project-card:nth-child(6)  {
+    background-color:  var(--primary-color-pink);
+  }
+
+
 
 </style>
 

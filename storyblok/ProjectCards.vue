@@ -45,7 +45,7 @@ const projectDescription = computed(() => {
 
 <style scoped>
   img {
-    transition: transform 0.3s ease-in-out;
+    transition: scale 0.3s ease-in-out;
   }
   .project-desc h3{
     font-family: "Vidaloka", serif;
